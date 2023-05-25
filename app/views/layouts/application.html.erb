@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html class="h-full antialiased">
   <%= render "shared/head" %>
+  # <style>
+  #   .background-bongemxinhgai{
+  #     # background-image:url("https://www.shutterstock.com/image-illustration/bookshelves-library-old-books-3d-260nw-1530516716.jpg");
+  #     background-color:grey;
+  #   }
+      
 
+  # </style>
   <body class="font-sans font-normal leading-normal text-gray-800 bg-white flex flex-col min-h-screen ">
 
     <header>
@@ -9,8 +16,10 @@
       <%= render "shared/navbar" %>
     </header>
 
-    <main class="flex-grow">
+    <main class="flex-grow ">
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
+
   </body>
+
 </html>
