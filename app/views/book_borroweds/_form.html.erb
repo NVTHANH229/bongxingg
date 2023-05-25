@@ -13,15 +13,18 @@
 
   <div class="mb-6">
         <%= form.label :book_id, class: label_class %>
-          <%= form.text_field :book_id, class: input_class %>
+        <%= form.select :book_id, options_from_collection_for_select(
+          Book.all, 'id', 'book_name', selected = book_borrowed.book_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :student_id, class: label_class %>
-          <%= form.text_field :student_id, class: input_class %>
+        <%= form.select :student_id, options_from_collection_for_select(
+          Student.all, 'id', 'student_name', selected = book_borrowed.student_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :teacher_id, class: label_class %>
-          <%= form.text_field :teacher_id, class: input_class %>
+        <%= form.select :teacher_id, options_from_collection_for_select(
+          Teacher.all, 'id', 'teacher_name', selected = book_borrowed.teacher_id), class: label_class %>
       </div>
   <div class="mb-6">
         <%= form.label :borrow_date, class: label_class %>

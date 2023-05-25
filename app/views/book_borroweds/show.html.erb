@@ -15,15 +15,15 @@
   <ul class="text-slate-700">
       <li>
         <p class="font-semibold">Book:</p>
-        <p><%= @book_borrowed.book %></p>
+        <p><%= @book_borrowed.book.book_name %></p>
       </li>
       <li>
         <p class="font-semibold">Student:</p>
-        <p><%= @book_borrowed.student %></p>
+        <p><%= @book_borrowed.student.student_name %></p>
       </li>
       <li>
         <p class="font-semibold">Teacher:</p>
-        <p><%= @book_borrowed.teacher %></p>
+        <p><%= @book_borrowed.teacher.teacher_name %></p>
       </li>
       <li>
         <p class="font-semibold">Borrow date:</p>
