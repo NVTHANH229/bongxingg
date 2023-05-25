@@ -5,4 +5,5 @@ class Student < ApplicationRecord
         errors.add(:student_DoB, 'Year must not be in the future') if student_DoB >
        Time.now
     end
+    
 end

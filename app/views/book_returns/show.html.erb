@@ -1,0 +1,25 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Book_return</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to book_returns_path, class: button_class(theme: "transparent") do %>
+      All Book_returns
+      <% end %>
+      <%= link_to edit_book_return_path(@book_return), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Book borrowed:</p>
+        <p><%= @book_return.book_borrowed %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Book:</p>
+        <p><%= @book_return.book %></p>
+      </li>
+  </ul>
+</div>

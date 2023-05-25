@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_25_043710) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_25_052938) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -53,6 +53,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_043710) do
     t.string "author_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "book_borroweds", force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "student_id", null: false
+    t.integer "teacher_id", null: false
+    t.date "borrow_date"
+    t.date "due_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_book_borroweds_on_book_id"
+    t.index ["student_id"], name: "index_book_borroweds_on_student_id"
+    t.index ["teacher_id"], name: "index_book_borroweds_on_teacher_id"
+  end
+
+  create_table "book_returns", force: :cascade do |t|
+    t.integer "book_borrowed_id", null: false
+    t.integer "book_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_borrowed_id"], name: "index_book_returns_on_book_borrowed_id"
+    t.index ["book_id"], name: "index_book_returns_on_book_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -129,6 +151,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_043710) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "book_borroweds", "books"
+  add_foreign_key "book_borroweds", "students"
+  add_foreign_key "book_borroweds", "teachers"
+  add_foreign_key "book_returns", "book_borroweds"
+  add_foreign_key "book_returns", "books"
   add_foreign_key "books", "authors"
   add_foreign_key "books", "categories"
   add_foreign_key "books", "nxbs"

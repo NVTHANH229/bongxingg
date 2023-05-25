@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :book_returns
+  resources :book_borroweds
   resources :books
   resources :nxbs
   resources :authors

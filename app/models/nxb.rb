@@ -5,4 +5,5 @@ class Nxb < ApplicationRecord
         errors.add(:release_date, 'Year must not be in the future') if release_date >
        Time.now
     end
+    has_many :books
 end
