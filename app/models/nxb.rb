@@ -1,0 +1,2 @@
+class Nxb < ApplicationRecord
+end

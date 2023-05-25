@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  book_name: MyString
+  category: one
+  author: one
+  nxb: one
+
+two:
+  book_name: MyString
+  category: two
+  author: two
+  nxb: two

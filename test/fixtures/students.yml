@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_name: MyString
+  student_DoB: 2023-05-25
+  student_phone: MyString
+  student_email: MyString
+  student_address: MyString
+
+two:
+  student_name: MyString
+  student_DoB: 2023-05-25
+  student_phone: MyString
+  student_email: MyString
+  student_address: MyString

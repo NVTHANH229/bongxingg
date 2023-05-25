@@ -1,0 +1,37 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Student</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to students_path, class: button_class(theme: "transparent") do %>
+      All Students
+      <% end %>
+      <%= link_to edit_student_path(@student), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Student name:</p>
+        <p><%= @student.student_name %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Student dob:</p>
+        <p><%= @student.student_DoB %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Student phone:</p>
+        <p><%= @student.student_phone %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Student email:</p>
+        <p><%= @student.student_email %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Student address:</p>
+        <p><%= @student.student_address %></p>
+      </li>
+  </ul>
+</div>

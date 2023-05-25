@@ -1,0 +1,42 @@
+<%= form_with(model: teacher) do |form| %>
+<% if teacher.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% teacher.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :teacher_name, class: label_class %>
+          <%= form.text_field :teacher_name, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :teacher_DoB, class: label_class %>
+          <%= form.date_field :teacher_DoB, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :teacher_phone, class: label_class %>
+          <%= form.text_field :teacher_phone, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :teacher_email, class: label_class %>
+          <%= form.text_field :teacher_email, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :teacher_address, class: label_class %>
+          <%= form.text_field :teacher_address, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if teacher.persisted? %>
+<%= link_to "Cancel", teacher, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", teachers_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>
