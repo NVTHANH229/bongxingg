@@ -19,5 +19,7 @@ module Bongxing
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.hosts << "bongxingg-production.up.railway.app"
+ 
   end
 end
